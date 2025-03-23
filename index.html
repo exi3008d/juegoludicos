@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="menu">
+            <h2>¡Bienvenido al Juego del Ahorcado!</h2>
+            <label for="player-name">Ingresa tu nombre:</label>
+            <input type="text" id="player-name">
+            <button onclick="goToSubjectSelection()">Comenzar</button>
+        </div>
+        <div id="subject-selection" style="display: none;">
+            <h2>Elige una Materia</h2>
+            <p id="player-greeting"></p>
+            <button onclick="startSociology()">Sociología</button>
+            <button onclick="startStatistics()">Estadística</button>
+            <button onclick="viewPodium()">Ver Podio</button>
+        </div>
+        <div id="podium" style="display: none;">
+            <h2>Podio</h2>
+            <p>Este es el podio de los jugadores:</p>
+            <ul id="podium-list">
+                <!-- Los nombres y puntajes se pueden agregar dinámicamente aquí -->
+            </ul>
+            <button onclick="backToMenu()">Volver</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

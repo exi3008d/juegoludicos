@@ -1,0 +1,299 @@
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+#game-container {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos y textos */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#player-greeting {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Botones */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Input */
+input[type="text"] {
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Tablero del juego */
+#word-display {
+    font-size: 24px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+#incorrect-letters {
+    border: 1px solid red;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #ffe6e6;
+    width: 80%;
+    max-width: 300px;
+    font-size: 16px;
+    color: #d00000;
+}
+
+/* Imagen del ahorcado */
+#hangman-image {
+    margin: 20px auto;
+    width: 200px;
+}
+
+/* Puntuación e intentos */
+#score, #attempts {
+    font-size: 16px;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Diseño responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #game-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    #word-display {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    #incorrect-letters {
+        font-size: 14px;
+        width: 90%;
+    }
+
+    #hangman-image {
+        width: 150px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+}
+
+/* Diseño responsivo para pantallas pequeñas como teléfonos */
+@media (max-width: 480px) {
+    #game-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #word-display {
+        font-size: 18px;
+    }
+
+    #hangman-image {
+        width: 120px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    input[type="text"] {
+        font-size: 12px;
+    }
+
+    #incorrect-letters {
+        font-size: 12px;
+    }
+}
+/* Estilo global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+#game-container {
+    margin: 100px auto; /* Incrementa el margen superior para dejar espacio para las pistas */
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Necesario para posicionar la pista */
+}
+
+/* Pista centrada arriba del rectángulo */
+#hint {
+    position: absolute;
+    top: -50px; /* Baja ligeramente más la pista para que se vea mejor */
+    left: 50%;
+    transform: translateX(-50%); /* Centra horizontalmente */
+    font-size: 22px; /* Tamaño grande para mejor visibilidad */
+    font-weight: bold;
+    color: #333;
+    background-color: #eaeaea;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Títulos y textos */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Tablero del juego */
+#word-display {
+    font-size: 24px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+/* Intentos restantes */
+#attempts {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Imagen del ahorcado */
+#hangman-image {
+    margin: 20px auto;
+    width: 200px;
+}
+
+/* Botones */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    #game-container {
+        width: 90%;
+        padding: 15px;
+        margin: 80px auto; /* Ajusta el margen superior para tablets */
+    }
+
+    #hint {
+        font-size: 20px; /* Ajusta el tamaño en pantallas medianas */
+        top: -40px; /* Ajusta la posición de la pista */
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    #word-display {
+        font-size: 20px;
+    }
+
+    #hangman-image {
+        width: 150px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #game-container {
+        width: 95%;
+        padding: 10px;
+        margin: 60px auto; /* Reduce el margen superior para teléfonos pequeños */
+    }
+
+    #hint {
+        font-size: 18px; /* Reduce el tamaño para pantallas pequeñas */
+        top: -30px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #word-display {
+        font-size: 18px;
+    }
+
+    #hangman-image {
+        width: 120px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

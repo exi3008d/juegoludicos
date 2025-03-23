@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado - Estadística</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="game-container">
+        <h2>Ahorcado</h2>
+        <div id="hint">Pista: </div>
+        <div id="score">Puntuación: 0</div>
+        <div id="attempts">Intentos restantes: 5</div>
+        <img id="hangman-image" src="imagenes/ahorcado0.png" alt="Imagen del Ahorcado">
+        <div id="word-display">_ _ _ _ _ _ _</div>
+        <div id="incorrect-letters">Letras erradas:</div>
+        <input type="text" id="guess-input" maxlength="1" placeholder="Escribe una letra" onkeypress="guessLetter(event)">
+        <div id="game-over" style="display: none;">
+            <h3 id="game-over-message"></h3>
+            <button onclick="restartGame()">Reiniciar juego</button>
+            <button onclick="viewPodiumFromGame()">Ver podio</button>
+            <button onclick="backToHome()">Volver al inicio</button>
+
+        </div>
+    </div>
+    <script src="script-estadistica.js"></script>
+</body>
+</html>
