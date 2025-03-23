@@ -1,6 +1,7 @@
+let score = 0; // Variable para almacenar la puntuación
 let attempts = 5;
 let word = "";
-let hint = ""; // Nueva variable para la pista
+let hint = ""; // Variable para la pista
 let correctLetters = [];
 let incorrectLetters = [];
 const wordBank = [
@@ -25,6 +26,7 @@ function startGame() {
 
 function updateDisplay() {
     document.getElementById("hint").innerText = `Pista: ${hint}`; // Actualiza la pista
+    document.getElementById("score").innerText = `Puntuación: ${score}`; // Actualiza la puntuación
     document.getElementById("attempts").innerText = `Intentos restantes: ${attempts}`;
     document.getElementById("word-display").innerText = word
         .split("")
@@ -52,9 +54,10 @@ function guessLetter(event) {
 
     if (word.includes(guess)) {
         correctLetters.push(guess);
+        score += 10; // Incrementa la puntuación por cada letra correcta
     } else {
         incorrectLetters.push(guess);
-        attempts--;
+        attempts--; // Reduce los intentos por cada error
     }
 
     updateDisplay();
@@ -68,7 +71,7 @@ function guessLetter(event) {
 
 function endGame(win) {
     document.getElementById("game-over").style.display = "block";
-    const message = win ? "¡Ganaste!" : `Perdiste, la palabra era: ${word}`;
+    const message = win ? `¡Ganaste con ${score} puntos!` : `Perdiste. La palabra era: ${word}`;
     document.getElementById("game-over-message").innerText = message;
 }
 
@@ -76,12 +79,8 @@ function restartGame() {
     location.reload();
 }
 
-function viewPodiumFromGame() {
-    window.location.href = "index.html#podium";
-}
-
 function backToHome() {
-    window.location.href = "index.html";
+    window.location.href = "index.html"; // Redirige al inicio
 }
 
 window.onload = startGame;
